@@ -1,0 +1,91 @@
+[
+  
+ 
+ 
+  {
+    "name": "IBM-Business Intelligence",
+    "desc": "Credential issued by IBM Career Education Program via Cognitive Class, backed by the IBM Developer Skills Network",
+    "image": "IBM",
+    "category": "Certification",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+    {
+        "name": "DevOps Fundamentals",
+        "desc": "Gained practical knowledge of DevOps tools and practices like CI/CD, automation, and agile development through IBM's Cognitive Class platform. Focused on improving software delivery and collaboration.",
+        "image": "imb2",
+        "category": "Certification",
+        "links": {
+        "view": "#",
+        "code": "#"
+        }
+    },
+  
+    {
+        "name": "Introduction to MOngoDB",
+        "desc": "Learned the fundamentals of MongoDB, including NoSQL concepts, data modeling, and CRUD operations. Focused on practical skills for working with MongoDB databases in real-world applications.",
+        "image": "MongoDB ",
+        "category": "Certification",
+        "links": {
+        "view": "#",
+        "code": "#"
+        }
+    },
+
+
+    
+    {
+        "name": "Power-BI Workshop",
+        "desc": "Gained hands-on experience in creating AI-powered interactive dashboards using Power BI. Trained to build efficient data visualizations in under 30 minutes.",
+        "image": "c1",
+        "category": "Certification",
+        "links": {
+        "view": "#",
+        "code": "#"
+        }
+    },
+    {
+        "name": "EF SET",
+        "desc": "Achieved a C2 Proficient level (71/100) on the EF SET English Certificate, demonstrating advanced skills in reading, listening, writing, and speaking English.",
+        "image": "English",
+        "category": "Certification",
+        "links": {
+        "view": "#",
+        "code": "#"
+        }
+    },
+    {
+        "name": "Microsoft-Cloud native apps and containerized deployments",
+        "desc": "Cloud-native applications using containerization technologies. Covered key concepts of modern app development and scalable cloud deployment strategies",
+        "image": "m3",
+        "category": "Certification",
+        "links": {
+        "view": "#",
+        "code": "#"
+        }
+    },
+    {
+        "name": "Microsoft-Scale and manage deployed container apps",
+        "desc": "Learned how to effectively scale and manage deployed containerized applications using modern cloud-native tools and practices. Gained hands-on experience in ensuring app performance and reliability at scale.",
+        "image": "m7",
+        "category": "Certification",
+        "links": {
+        "view": "#",
+        "code": "#"
+        }
+    },
+    {
+        "name": "Microsoft ",
+        "desc": "Cloud-native applications using containerization technologies. Covered key concepts of modern app development and scalable cloud deployment strategies",
+        "image": "m2",
+        "category": "Certification",
+        "links": {
+        "view": "#",
+        "code": "#"
+        }
+    }
+
+
+]

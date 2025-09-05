@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Me</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #e6ecf5;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: linear-gradient(135deg, #ff00cc, #333399);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .image-box {
+      flex: 1;
+      min-width: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+    .image-box img {
+      max-width: 100%;
+    }
+    form {
+      flex: 1;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea, button {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+    }
+    input:focus, textarea:focus {
+      border-color: #333399;
+      box-shadow: 0 0 5px rgba(51, 51, 153, 0.3);
+    }
+    button {
+      background: #333399;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #1a1a80;
+    }
+    .status {
+      text-align: center;
+      font-size: 14px;
+    }
+    .success { color: green; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="content">
+      <!-- Image Section -->
+      <div class="image-box">
+        <img src="./assets/images/contact1.png" alt="Contact" />
+      </div>
+
+      <!-- Contact Form -->
+      <form id="contact-form">
+        <input type="text" name="from_name" placeholder="Your Name" required />
+
+        <input type="email" 
+          name="reply_to" 
+          placeholder="Your Email" 
+          required
+          autocapitalize="off" 
+          autocorrect="off" 
+          spellcheck="false"
+          style="text-transform: lowercase;"
+          oninput="this.value = this.value.toLowerCase();" />
+
+        <input type="text" name="phone" placeholder="Phone (optional)" />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        
+        <button type="submit" id="send-btn">
+          Send Message <i class="fa fa-paper-plane"></i>
+        </button>
+        <div class="status" id="status"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FontAwesome (for paper plane icon) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("lAaC3iKTjjiLkjiXt"); // ✅ Your Public Key
+    })();
+
+    const form = document.getElementById("contact-form");
+    const sendBtn = document.getElementById("send-btn");
+    const statusDiv = document.getElementById("status");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      sendBtn.disabled = true;
+      sendBtn.textContent = "Sending...";
+
+      emailjs.sendForm("service_f2gsse3", "template_9ccdhs7", this)
+        .then(function() {
+          statusDiv.textContent = "✅ Message sent successfully!";
+          statusDiv.className = "status success";
+          form.reset();
+        }, function(error) {
+          statusDiv.textContent = "❌ Failed to send message. Try again!";
+          statusDiv.className = "status error";
+          console.error("EmailJS Error:", error);
+        })
+        .finally(() => {
+          sendBtn.disabled = false;
+          sendBtn.textContent = "Send Message";
+        });
+    });
+  </script>
+
+</body>
+</html>
